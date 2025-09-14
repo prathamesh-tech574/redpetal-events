@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedPetal Events - Premier Event Management Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg { 
+            background: linear-gradient(135deg, #dc2626 0%, #f97316 50%, #fbbf24 100%);
+        }
+        
+        .petal-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+        }
+        
+        .card-hover { 
+            transition: all 0.3s ease; 
+        }
+        .card-hover:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.2); 
+        }
+        
+        .floating-petals {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(220, 38, 38, 0.3);
+            border-radius: 50% 0 50% 0;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #dc2626, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-xl fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="text-3xl mr-3">🌹</div>
+                    <div>
+                        <h1 class="text-2xl font-playfair font-bold text-red-600">RedPetal Events</h1>
+                        <p class="text-xs text-gray-500">Creating Magical Moments</p>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-red-600 px-3 py-2 rounded-md font-medium transition-all duration-300">Home</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-red-600 px-3 py-2 rounded-md font-medium transition-all duration-300">About</a>
+                        <a href="#services" class="nav-link text-gray-700 hover:text-red-600 px-3 py-2 rounded-md font-medium transition-all duration-300">Services</a>
+                        <a href="#gallery" class="nav-link text-gray-700 hover:text-red-600 px-3 py-2 rounded-md font-medium transition-all duration-300">Gallery</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-red-600 px-3 py-2 rounded-md font-medium transition-all duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-red-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-red-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-red-600">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-red-600">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-red-600">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-red-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-20 relative overflow-hidden">
+        <div class="floating-petals">
+            <div class="petal" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="petal" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="petal" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="petal" style="left: 40%; animation-delay: 3s;"></div>
+            <div class="petal" style="left: 50%; animation-delay: 4s;"></div>
+            <div class="petal" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="petal" style="left: 70%; animation-delay: 1.5s;"></div>
+            <div class="petal" style="left: 80%; animation-delay: 2.5s;"></div>
+            <div class="petal" style="left: 90%; animation-delay: 3.5s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="text-center">
+                <div class="text-8xl mb-6">🌹</div>
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-6">RedPetal Events</h1>
+                <p class="text-xl md:text-2xl mb-4 text-orange-100">Creating Unforgettable Moments, One Event at a Time</p>
+                <p class="text-lg mb-8 text-yellow-100">Premier Event Management Company</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('services')" class="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-2xl transform hover:scale-105">
+                        Our Services
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white petal-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-gray-800 mb-6">About RedPetal Events</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">We are passionate event planners dedicated to transforming your special moments into extraordinary memories. With creativity, attention to detail, and personalized service, we bring your vision to life.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Creative Excellence</h3>
+                    <p class="text-gray-600">Innovative designs and unique concepts that make your event truly special and memorable.</p>
+                </div>
+                <div class="text-center p-8 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Perfect Planning</h3>
+                    <p class="text-gray-600">Meticulous attention to every detail ensures flawless execution of your dream event.</p>
+                </div>
+                <div class="text-center p-8 bg-gradient-to-br from-yellow-50 to-red-50 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">💝</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Personal Touch</h3>
+                    <p class="text-gray-600">Customized solutions tailored to your preferences, budget, and vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-gray-800 mb-6">Our Services</h2>
+                <p class="text-xl text-gray-600">From intimate gatherings to grand celebrations, we handle it all</p>
+            </div>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">💒</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Weddings</h3>
+                    <p class="text-gray-600 text-sm">Dream weddings with perfect planning and magical moments</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">💕</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Anniversary</h3>
+                    <p class="text-gray-600 text-sm">Celebrate love milestones with elegant anniversary parties</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">🍼</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Baby Shower</h3>
+                    <p class="text-gray-600 text-sm">Welcome new arrivals with beautiful baby shower celebrations</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">🏢</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Corporate Events</h3>
+                    <p class="text-gray-600 text-sm">Professional corporate gatherings and business celebrations</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">💍</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Engagement</h3>
+                    <p class="text-gray-600 text-sm">Romantic engagement ceremonies to mark new beginnings</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">🎂</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Birthday Parties</h3>
+                    <p class="text-gray-600 text-sm">Fun-filled birthday celebrations for all ages</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">👶</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Naming Ceremony</h3>
+                    <p class="text-gray-600 text-sm">Traditional naming ceremonies with cultural significance</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="service-icon mb-4">🎤</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Conference Setup</h3>
+                    <p class="text-gray-600 text-sm">Professional conference and seminar arrangements</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-600 mb-6">And many more special occasions...</p>
+                <button onclick="scrollToSection('contact')" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-all duration-300 shadow-lg transform hover:scale-105">
+                    Plan Your Event
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-gray-800 mb-6">Event Gallery</h2>
+                <p class="text-xl text-gray-600">Glimpses of our beautiful events and celebrations</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-100 to-pink-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">💒</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Wedding Celebrations</h3>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-100 to-yellow-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Birthday Parties</h3>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🏢</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Corporate Events</h3>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">💍</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Engagements</h3>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-green-100 to-blue-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🍼</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Baby Showers</h3>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-100 to-orange-100 p-8 rounded-2xl card-hover h-64 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎊</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Special Occasions</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-gray-800 mb-6">Contact Us</h2>
+                <p class="text-xl text-gray-600">Ready to plan your perfect event? Get in touch with our expert planners!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-playfair font-semibold text-gray-800 mb-6">Our Event Planners</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center p-4 bg-red-50 rounded-xl">
+                                <div class="text-3xl mr-4">👨‍💼</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Tejas Patil</h4>
+                                    <p class="text-gray-600">Event Planner</p>
+                                    <a href="tel:9371282838" class="text-red-600 hover:text-red-700 font-medium">📞 9371282838</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-orange-50 rounded-xl">
+                                <div class="text-3xl mr-4">👨‍💼</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Aditya Aswalikar</h4>
+                                    <p class="text-gray-600">Event Planner</p>
+                                    <a href="tel:9158916831" class="text-red-600 hover:text-red-700 font-medium">📞 9158916831</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-playfair font-semibold text-gray-800 mb-6">Connect With Us</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">📧</div>
+                                <div>
+                                    <p class="text-gray-600">Email</p>
+                                    <a href="mailto:redpetalevents28@gmail.com" class="text-red-600 hover:text-red-700 font-medium">redpetalevents28@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">📱</div>
+                                <div>
+                                    <p class="text-gray-600">Instagram</p>
+                                    <a href="https://instagram.com/redpeatal_events_28" target="_blank" class="text-red-600 hover:text-red-700 font-medium">@redpeatal_events_28</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-playfair font-semibold text-gray-800 mb-6">Get Your Free Quote</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Your phone number">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Event Type *</label>
+                            <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="baby-shower">Baby Shower</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="engagement">Engagement</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="naming">Naming Ceremony</option>
+                                <option value="conference">Conference Setup</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Event Date</label>
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Tell us about your event vision, guest count, budget, and any special requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Send Inquiry 🌹
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center items-center mb-6">
+                    <div class="text-4xl mr-3">🌹</div>
+                    <div>
+                        <h3 class="text-3xl font-playfair font-bold">RedPetal Events</h3>
+                        <p class="text-orange-200">Creating Magical Moments</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">Contact</h4>
+                        <p class="text-orange-200 text-sm">redpetalevents28@gmail.com</p>
+                        <p class="text-orange-200 text-sm">Tejas: 9371282838</p>
+                        <p class="text-orange-200 text-sm">Aditya: 9158916831</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Services</h4>
+                        <p class="text-orange-200 text-sm">Weddings • Corporate Events</p>
+                        <p class="text-orange-200 text-sm">Birthday Parties • Conferences</p>
+                        <p class="text-orange-200 text-sm">And Many More...</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <a href="https://instagram.com/redpeatal_events_28" target="_blank" class="text-orange-200 hover:text-white transition-colors">
+                            📱 @redpeatal_events_28
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-orange-300 pt-8">
+                    <p class="text-orange-200 text-sm">© 2024 RedPetal Events. All rights reserved. | Making your dreams come true, one petal at a time 🌹</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click handlers to nav links
+        document.querySelectorAll('.nav-link, #mobile-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.className = 'mt-4 text-center p-4 bg-green-100 text-green-700 rounded-lg';
+            messageDiv.innerHTML = `
+                <div class="text-2xl mb-2">🌹</div>
+                <p class="font-semibold">Thank you for your inquiry!</p>
+                <p class="text-sm">Our event planners will contact you within 24 hours to discuss your special event. This is a demo form - in a real website, this would send your details to RedPetal Events.</p>
+            `;
+            messageDiv.classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 8 seconds
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 8000);
+        });
+
+        // Add active state to navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = ['home', 'about', 'services', 'gallery', 'contact'];
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const navLink = document.querySelector(`a[href="#${section}"]`);
+                
+                if (element && navLink && element.offsetTop <= scrollPos && element.offsetTop + element.offsetHeight > scrollPos) {
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-red-600'));
+                    navLink.classList.add('text-red-600');
+                }
+            });
+        });
+
+        // Add some interactive animations on scroll
+        window.addEventListener('scroll', function() {
+            const petals = document.querySelectorAll('.petal');
+            const scrolled = window.pageYOffset;
+            
+            petals.forEach((petal, index) => {
+                const speed = 0.5 + (index * 0.1);
+                petal.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ef142af4eb9a8f',t:'MTc1Nzg0NDQ2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
